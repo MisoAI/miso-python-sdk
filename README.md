@@ -1,6 +1,15 @@
-# MISO Python SDK
+# MISO SDK for Python
 
-This is a thin & minimal HTTP client to interact with Miso's API.
+Enhance your site with high conversion magic with [Miso's](https://miso.ai/) power.
+
+<p>
+  <a href="/LICENSE"><img src="https://img.shields.io/npm/l/@miso.ai/client-sdk"></a>
+</p>
+
+[Home](https://miso.ai/) |
+[Docs](https://docs.miso.ai/) |
+[API Reference](https://api.askmiso.com/) |
+[Recipes](https://docs.miso.ai/recipes)
 
 ## Quick Start
 To use the SDK client:
@@ -21,3 +30,6 @@ will print:
 ```
 
 For detailed usage, please refert to [Miso API Document](https://api.askmiso.com/).
+
+## License
+This library is distributed under the [MIT license](LICENSE).
