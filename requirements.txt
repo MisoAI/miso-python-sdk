@@ -1,1 +1,6 @@
+# prod
 requests
+# dev
+pytest
+wheel
+setuptools
