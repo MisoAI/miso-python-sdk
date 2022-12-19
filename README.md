@@ -1,11 +1,23 @@
-# SDK Example
+# MISO Python SDK
 
-Check [test.py] for usage.
+This is a thin & minimal HTTP client to interact with Miso's API.
 
-To test run SDK:
+## Quick Start
+To use the SDK client:
 
-```shell
-make
-source venv/bin/activate
-API_KEY={API_KEY_HERE} python test.py
+```python
+from miso.sdk import ApiClient
+
+api_key = 'YOUR-API-KEY-HERE'
+
+api_client = ApiClient(api_key)
+resp = api_client.search.search({"q":"love", "user_id": "MY-ID"})
+print(resp)
 ```
+
+will print:
+```json
+{"message":"success","data":{"took":793,"miso_id":"0c4bd428-7f60-11ed-b82d-4ad9871739bd","products":[{"product_id":"936776","product_group_id":"921757"},{"product_id":"73968","product_group_id":"816372"},{"product_id":"8204005","product_group_id":"13051038"},{"product_id":"29762367","product_group_id":"50123221"},{"product_id":"1275404","product_group_id":"1264375"}],"total":23368,"start":0,"spellcheck":{"spelling_errors":false,"auto_spelling_correction":false,"original_query":"love","original_query_with_markups":"love","corrected_query":"love","corrected_query_with_markups":"love"},"product_existence":{},"partially_matched_products":null,"facet_counts":{"facet_fields":{}},"custom_assets":[]}}
+```
+
+For detailed usage, please refert to [Miso API Document](https://api.askmiso.com/).
