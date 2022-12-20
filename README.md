@@ -70,7 +70,7 @@ will print something simular to:
 }
 ```
 
-For detailed usage, please refert to [Miso API Document](https://api.askmiso.com/).
+For detailed usage, please refer to [Miso API Document](https://api.askmiso.com/).
 
 ## License
 This library is distributed under the [MIT license](LICENSE).
