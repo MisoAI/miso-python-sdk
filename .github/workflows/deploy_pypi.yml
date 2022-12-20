@@ -1,0 +1,32 @@
+name: Deploy to PYPI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Update version
+        run: sed -i".bu" "s/SDK_VERSION.*/SDK_VERSION='${GITHUB_REF_NAME:1}'/" miso/version.py
+
+      - name: Build sdist
+        run: |
+          make build
+          . venv/bin/activate && twine check dist/*
+
+      - name: Push PYPI
+        run: make upload
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
