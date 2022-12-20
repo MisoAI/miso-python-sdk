@@ -16,18 +16,58 @@ Enhance your site with high conversion magic with [Miso](https://miso.ai/)'s pow
 To use the SDK client:
 
 ```python
+import json
 from miso.sdk import ApiClient
 
 api_key = 'YOUR-API-KEY-HERE'
 
 api_client = ApiClient(api_key)
 resp = api_client.search.search({"q":"love", "user_id": "MY-ID"})
-print(resp)
+print(json.dumps(resp, indent=2))
 ```
 
-will print:
+will print something simular to:
 ```json
-{"message":"success","data":{"took":793,"miso_id":"0c4bd428-7f60-11ed-b82d-4ad9871739bd","products":[{"product_id":"936776","product_group_id":"921757"},{"product_id":"73968","product_group_id":"816372"},{"product_id":"8204005","product_group_id":"13051038"},{"product_id":"29762367","product_group_id":"50123221"},{"product_id":"1275404","product_group_id":"1264375"}],"total":23368,"start":0,"spellcheck":{"spelling_errors":false,"auto_spelling_correction":false,"original_query":"love","original_query_with_markups":"love","corrected_query":"love","corrected_query_with_markups":"love"},"product_existence":{},"partially_matched_products":null,"facet_counts":{"facet_fields":{}},"custom_assets":[]}}
+{
+  "message": "success",
+  "data": {
+    "took": 15,
+    "miso_id": "fd3aae82-8068-11ed-89d8-967a8675a919",
+    "products": [
+      {
+        "product_id": "588527603"
+      },
+      {
+        "product_id": "193225388"
+      },
+      {
+        "product_id": "771495105"
+      },
+      {
+        "product_id": "572340793",
+      },
+      {
+        "product_id": "563687627"
+      }
+    ],
+    "total": 65577,
+    "start": 0,
+    "spellcheck": {
+      "spelling_errors": false,
+      "auto_spelling_correction": false,
+      "original_query": "love",
+      "original_query_with_markups": "love",
+      "corrected_query": "love",
+      "corrected_query_with_markups": "love"
+    },
+    "product_existence": {},
+    "partially_matched_products": null,
+    "facet_counts": {
+      "facet_fields": {}
+    },
+    "custom_assets": []
+  }
+}
 ```
 
 For detailed usage, please refert to [Miso API Document](https://api.askmiso.com/).
