@@ -8,6 +8,7 @@ from .api.qa import QAApi
 from .api.recommendation import RecommendationApi
 from .api.search import SearchApi
 from .api.user import UserApi
+from .version import SDK_VERSION
 
 
 class ApiException(Exception):
@@ -18,7 +19,7 @@ class ApiException(Exception):
 
 
 class ApiClient:
-    VERSION = '0.0.0'
+    VERSION = SDK_VERSION
 
     def __init__(
         self,

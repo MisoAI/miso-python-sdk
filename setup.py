@@ -1,12 +1,14 @@
 from setuptools import setup, find_packages
 import pathlib
 
+from miso.version import SDK_VERSION
+
 here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="miso-sdk",
-    version="0.0.0",
+    version=SDK_VERSION,
     license='MIT',
 
     description="Enhance your site with high conversion magic with Miso's power.",
