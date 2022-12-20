@@ -26,7 +26,7 @@ resp = api_client.search.search({"q":"love", "user_id": "MY-ID"})
 print(json.dumps(resp, indent=2))
 ```
 
-will print something simular to:
+will print something similar to:
 ```json
 {
   "message": "success",
