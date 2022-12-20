@@ -1,2 +1,7 @@
+# local python environmemt
 /venv/
 /.python-version
+
+# build dist
+/miso_sdk.egg-info/
+/dist/
