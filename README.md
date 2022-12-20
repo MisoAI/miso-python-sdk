@@ -1,9 +1,10 @@
 # MISO SDK for Python
 
-Enhance your site with high conversion magic with [Miso's](https://miso.ai/) power.
+Enhance your site with high conversion magic with [Miso](https://miso.ai/)'s power.
 
 <p>
-  <a href="/LICENSE"><img src="https://img.shields.io/npm/l/@miso.ai/client-sdk"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/misoai/miso-python-sdk"></a>
+  <a href="https://pypi.org/project/miso-sdk/"><img src="https://img.shields.io/pypi/v/miso-sdk"></a>
 </p>
 
 [Home](https://miso.ai/) |
