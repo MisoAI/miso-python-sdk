@@ -4,12 +4,14 @@ build: venv/bin/activate
 	. venv/bin/activate; python3 setup.py sdist
 
 clean:
-	rm -r venv || true
 	rm -r dist || true
 	rm -r miso_sdk.egg-info || true
 
 upload: venv/bin/activate dist/*.gz
 	. venv/bin/activate; twine upload dist/*
+
+deep-clean: clean
+	rm -r venv || true
 
 ##################
 
