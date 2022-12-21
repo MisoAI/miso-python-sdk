@@ -6,3 +6,6 @@ mypy
 pytest
 setuptools
 twine
+#doc
+mkdocs
+mkdocs-material
