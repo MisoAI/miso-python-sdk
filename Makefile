@@ -9,6 +9,9 @@ test: venv/bin/activate
 test-online: venv/bin/activate
 	. venv/bin/activate; pytest
 
+doc-serve: venv/bin/activate
+	. venv/bin/activate; mkdocs serve
+
 clean:
 	rm -r dist || true
 	rm -r miso_sdk.egg-info || true
