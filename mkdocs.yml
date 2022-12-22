@@ -1,0 +1,70 @@
+site_name: Miso SDK for Python
+
+repo_name: MisoAI/miso-python-sdk
+repo_url: https://github.com/MisoAI/miso-python-sdk/
+
+nav:
+    - "Overview": overview.md
+    - "API":
+        - api/index.md
+        - "Data API":
+            - "Interaction": api/interaction.md
+            - "Product": api/product.md
+            - "User": api/user.md
+        - "Engine API":
+            - "Search": api/search.md
+            - "Recommendation": api/recommendation.md
+            - "QA Engine": api/qa.md
+            - "Bulk Request": api/bulk.md
+        - "Experiment API":
+            - "Send Experiment Event": api/experiment.md
+theme:
+  name: material
+  highlightjs: true
+  features:
+    - navigation.tabs
+  logo: asset/miso-logo.svg
+  favicon: asset/favicon.png
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+copyright: Miso SDK, code licensed MIT, documentation CC BY 4.0
+edit_uri: ""
+
+extra:
+  social:
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/miso-sdk/
+      name: miso-sdk @ PYPI
+    - icon: fontawesome/brands/github
+      link: https://github.com/MisoAI/
+      name: Miso @ Github
+    - icon: fontawesome/solid/globe
+      link: https://miso.ai/
+      name: Miso.ai
+    - icon: fontawesome/brands/blogger-b
+      link: https://miso.ai/blog/whats-new
+      name: Miso Technologies Blog
+    - icon: fontawesome/solid/file-lines
+      link: https://api.askmiso.com/
+      name: Miso REST API
+    - icon: fontawesome/solid/book
+      link: https://docs.miso.ai/
+      name: Miso Documentation
+    - icon: fontawesome/solid/bread-slice
+      link: https://docs.miso.ai/recipes/
+      name: Miso Recipes
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables
