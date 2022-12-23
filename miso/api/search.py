@@ -1,5 +1,3 @@
-from typing import List
-
 from .base import ApiBase
 
 
@@ -12,6 +10,5 @@ class SearchApi(ApiBase):
         return self._api_call('v1/search/autocomplete', payload)
 
 
-    def multi_get(self, product_ids: List[str]):
-        payload = {"product_ids": product_ids}
+    def multi_get(self, payload: dict):
         return self._api_call('v1/search/mget', payload)
