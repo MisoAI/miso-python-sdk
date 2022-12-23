@@ -53,8 +53,8 @@ class ApiClient:
                 raise ApiException(msg, resp.status_code, data)
             result = resp.json()
 
-            # automatically unpack data for succesful requests
-            if status == 200 and 'data' in result:
+            # automatically unpack data
+            if 'data' in result:
                 result = result['data']
 
             return result
