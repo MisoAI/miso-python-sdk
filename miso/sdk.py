@@ -29,9 +29,9 @@ class ApiClient:
     ):
         session = requests.Session()
 
-        session.params.update({
+        session.params = {
             'api_key': api_key,
-        })
+        }
 
         session.headers.update({
             'User-Agent': f'miso-sdk-python/{self.VERSION}',
