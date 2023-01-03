@@ -51,13 +51,7 @@ class ApiClient:
             if raise_on_error and status >= 400:
                 msg = f"API requset failed, status = {status}, message = `{data.get('message')}`"
                 raise ApiException(msg, resp.status_code, data)
-            result = resp.json()
-
-            # automatically unpack data
-            if 'data' in result:
-                result = result['data']
-
-            return result
+            return resp.json()
 
         self.interaction = InteractionApi(api_call)
         self.product = ProductApi(api_call)
