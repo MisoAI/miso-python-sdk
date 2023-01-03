@@ -13,4 +13,4 @@ class ProductApi(ApiBase):
 
     def delete(self, product_id: str):
         path = f'v1/products/{product_id}'
-        return self._api_call('v1/product', {}, method='DELETE')
+        return self._api_call(path, {}, method='DELETE')
