@@ -1,0 +1,5 @@
+[MASTER]
+
+[MESSAGES CONTROL]
+disable=missing-function-docstring,missing-module-docstring,missing-class-docstring
+fail-under=9
