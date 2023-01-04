@@ -79,7 +79,8 @@ class ApiBase:
         for field, val in payload.items():
             # built-in types
             for field_type, typed_fields in types.items():
-                if field in typed_fields and not isinstance(val, field_type):
+                if field in typed_fields \
+                   and not isinstance(val, field_type): # type: ignore[arg-type]
                     errors.append(f"`{field}` ({val}) shoud be {field_type}, not {type(val)}")
             # generic types
             if field in list_str_fields:
