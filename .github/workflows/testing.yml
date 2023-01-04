@@ -1,0 +1,48 @@
+name: Linting and testing
+
+on: [push, workflow_dispatch]
+
+jobs:
+  Linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Depedencies
+        run: pip install -r requirements.txt
+
+      - name: Install type stub
+        run: python3 -m pip install types-requests
+
+      - name: mypy
+        run: mypy miso
+
+      - name: pylint
+        run: pylint miso
+
+
+  Unit_test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pyver: ['3.7', '3.8', '3.9', '3.10']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Install Depedencies
+        run: pip install -r requirements.txt
+
+      - name: Run testing
+        run: pytest
