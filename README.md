@@ -3,8 +3,9 @@
 Enhance your site with high conversion magic with [Miso](https://miso.ai/)'s power.
 
 <p>
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/misoai/miso-python-sdk"></a>
   <a href="https://pypi.org/project/miso-sdk/"><img src="https://img.shields.io/pypi/v/miso-sdk"></a>
+  <a href="https://github.com/MisoAI/miso-python-sdk/actions/workflows/testing.yml"><img src="https://github.com/MisoAI/miso-python-sdk/actions/workflows/testing.yml/badge.svg"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/misoai/miso-python-sdk"></a>
 </p>
 
 [Home](https://miso.ai/) |
