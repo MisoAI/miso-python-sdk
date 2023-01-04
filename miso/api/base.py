@@ -1,5 +1,5 @@
 from enum import auto, Enum
-from typing import Any, Callable, Dict, List
+from typing import Any, Callable, Dict
 
 
 class ApiId(Enum):
