@@ -3,6 +3,9 @@ init-env: venv/bin/activate
 build: venv/bin/activate
 	. venv/bin/activate; python3 setup.py sdist
 
+test: venv/bin/activate
+	. venv/bin/activate; pytest
+
 clean:
 	rm -r dist || true
 	rm -r miso_sdk.egg-info || true

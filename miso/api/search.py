@@ -1,5 +1,5 @@
 from typing import List, Optional
-from .base import ApiBase
+from .base import ApiBase, ApiId
 
 
 class SearchApi(ApiBase):
@@ -26,7 +26,7 @@ class SearchApi(ApiBase):
             'boost_fq': boost_fq,
             'start': start,
             'rows': rows,
-        }, extras)
+        }, extras, ApiId.SEARCH)
         return self._api_call('v1/search/search', payload)
 
 
@@ -50,7 +50,7 @@ class SearchApi(ApiBase):
             'fl': fl,
             'start': start,
             'rows': rows,
-        }, extras)
+        }, extras, ApiId.AUTOCOMPLETE)
 
         return self._api_call('v1/search/autocomplete', payload)
 
@@ -65,5 +65,5 @@ class SearchApi(ApiBase):
         payload = self.prepare_payload({
             'product_ids': product_ids,
             'fl': fl,
-        }, extras)
+        }, extras, ApiId.MGET)
         return self._api_call('v1/search/mget', payload)

@@ -1,5 +1,5 @@
 from typing import List, Optional
-from .base import ApiBase
+from .base import ApiBase, ApiId
 
 
 class RecommendationApi(ApiBase):
@@ -27,7 +27,7 @@ class RecommendationApi(ApiBase):
             "boost_fq": boost_fq,
             "pagination_id": pagination_id,
             "start": start,
-        }, extras)
+        }, extras, ApiId.REC_U2I)
         return self._api_call('v1/recommendation/user_to_products', payload)
 
 
@@ -55,7 +55,7 @@ class RecommendationApi(ApiBase):
             "root_category": root_category,
             "fq": fq,
             "boost_fq": boost_fq,
-        }, extras)
+        }, extras, ApiId.REC_U2C)
         return self._api_call('v1/recommendation/user_to_categories', payload)
 
 
@@ -85,7 +85,7 @@ class RecommendationApi(ApiBase):
             "products_per_attribute": products_per_attribute,
             "fq": fq,
             "boost_fq": boost_fq,
-        }, extras)
+        }, extras, ApiId.REC_U2A)
         return self._api_call('v1/recommendation/user_to_attributes', payload)
 
 
@@ -113,7 +113,7 @@ class RecommendationApi(ApiBase):
             "boost_fq": boost_fq,
             "pagination_id": pagination_id,
             "start": start,
-        }, extras)
+        }, extras, ApiId.REC_U2T)
         return self._api_call('v1/recommendation/user_to_trending', payload)
 
 
@@ -149,5 +149,5 @@ class RecommendationApi(ApiBase):
             "boost_fq": boost_fq,
             "pagination_id": pagination_id,
             "start": start,
-        }, extras)
+        }, extras, ApiId.REC_I2I)
         return self._api_call('v1/recommendation/product_to_products', payload)

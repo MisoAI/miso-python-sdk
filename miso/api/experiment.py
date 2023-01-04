@@ -1,5 +1,5 @@
 from typing import Optional
-from .base import ApiBase
+from .base import ApiBase, ApiId
 
 
 class ExperimentApi(ApiBase):
@@ -18,7 +18,7 @@ class ExperimentApi(ApiBase):
             "anonymous_id": anonymous_id,
             "variant_name": variant_name,
             "timestamp": timestamp,
-        }, extras)
+        }, extras, ApiId.EXPERIMENT_SEND)
 
         path = f"v1/experiments/{experiment}/events"
         return self._api_call(path, payload)

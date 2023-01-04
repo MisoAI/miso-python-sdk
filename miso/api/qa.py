@@ -1,5 +1,5 @@
 from typing import Dict, List, Optional, Union
-from .base import ApiBase
+from .base import ApiBase, ApiId
 
 
 class QAApi(ApiBase):
@@ -21,7 +21,7 @@ class QAApi(ApiBase):
             "fl": fl,
             "fq": fq,
             "boost_fq": boost_fq,
-        }, extras)
+        }, extras, ApiId.QA_ANSWER)
         return self._api_call('v1/qa/question_answering', payload)
 
 
@@ -33,7 +33,7 @@ class QAApi(ApiBase):
     ):
         payload = self.prepare_payload({
             "data": data,
-        }, extras)
+        }, extras, ApiId.QA_UPLOAD)
         return self._api_call('v1/qa/questions', payload)
 
 
@@ -47,5 +47,5 @@ class QAApi(ApiBase):
         payload = self.prepare_payload({
             "q": q,
             "rows": rows,
-        }, extras)
+        }, extras, ApiId.QA_AUTOCOMPLETE)
         return self._api_call('v1/qa/question_autocomplete', payload)
