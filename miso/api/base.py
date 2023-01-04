@@ -96,9 +96,10 @@ class ApiBase:
             ApiId.INTERACTION_UPLOAD,
         }
         if api_id in data_list_apis and 'data' in payload:
-            if not isinstance(payload['data'], list) \
-               or not all(isinstance(v, dict) for v in val):
-                errors.append(f"`data` ({val}) shoud be a list of dict")
+            data = payload['data']
+            if not isinstance(data, list) \
+               or not all(isinstance(v, dict) for v in data):
+                errors.append(f"`data` ({data}) shoud be a list of dict")
 
         if len(errors) > 0:
             raise ValueError('; '.join(errors))
