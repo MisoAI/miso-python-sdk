@@ -23,7 +23,7 @@ from miso.sdk import ApiClient
 api_key = 'YOUR-API-KEY-HERE'
 
 api_client = ApiClient(api_key)
-resp = api_client.search.search({"q":"love", "user_id": "MY-ID"})
+resp = api_client.search.search(q = "love", user_id = "MY-ID")
 print(json.dumps(resp, indent=2))
 ```
 
