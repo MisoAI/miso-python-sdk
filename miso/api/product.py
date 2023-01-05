@@ -7,7 +7,7 @@ class ProductApi(ApiBase):
         payload = self.prepare_payload({
             "data": data,
         }, extras, ApiId.PRODUCT_UPLOAD)
-        return self._api_call('v1/product', payload)
+        return self._api_call('v1/products', payload)
 
 
     def read(self, *, product_id: str, **extras):
