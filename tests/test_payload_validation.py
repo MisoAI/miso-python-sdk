@@ -48,19 +48,27 @@ def test_validation_pass(api_id, payload):
     (ApiId.PRODUCT_UPLOAD, {"data":{"id":"prod1", "title": "good product"}}),
     (ApiId.PRODUCT_READ, {"product_id": 123}),
     (ApiId.QA_ANSWER, {"q": ["what is love"], "min_probability": 0}),
-    (ApiId.REC_U2I, {}),
-    (ApiId.REC_U2C, {}),
-    (ApiId.REC_U2A, {}),
-    (ApiId.REC_U2T, {}),
-    (ApiId.REC_I2I, {"product_ids":["1", "2", "3"]}),
     (ApiId.REC_I2I, {"user_id": "usr", "product_id":["1", "2", "3"]}),
     (ApiId.REC_I2I, {"user_id": "usr", "product_ids": "1,2,3"}),
-    (ApiId.SEARCH, {"q": "star"}),
-    (ApiId.AUTOCOMPLETE, {"q": "aut"}),
     (ApiId.MGET, {"product_id":["1", "2", "3"]}),
     (ApiId.USER_UPLOAD, {"data":{}}),
 ])
 def test_validation_fail(api_id, payload):
     api_base = ApiBase(null_func)
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r".* shoud be .*"):
+        api_base.validate_payload(api_id, payload)
+
+
+@pytest.mark.parametrize('api_id, payload', [
+    (ApiId.REC_U2I, {}),
+    (ApiId.REC_U2C, {}),
+    (ApiId.REC_U2A, {}),
+    (ApiId.REC_U2T, {}),
+    (ApiId.REC_I2I, {"product_ids":["1", "2", "3"]}),
+    (ApiId.SEARCH, {"q": "star"}),
+    (ApiId.AUTOCOMPLETE, {"q": "aut"}),
+])
+def test_validation_need_user(api_id, payload):
+    api_base = ApiBase(null_func)
+    with pytest.raises(ValueError, match="Either user_id or anonymous_id need to be present"):
         api_base.validate_payload(api_id, payload)
