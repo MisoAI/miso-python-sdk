@@ -12,6 +12,9 @@ test-online: venv/bin/activate
 doc-serve: venv/bin/activate
 	. venv/bin/activate; mkdocs serve
 
+doc-build: venv/bin/activate
+	. venv/bin/activate; mkdocs build
+
 clean:
 	rm -r dist || true
 	rm -r miso_sdk.egg-info || true

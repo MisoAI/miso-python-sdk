@@ -5,3 +5,6 @@
 # build dist
 /miso_sdk.egg-info/
 /dist/
+
+# build doc site
+/site/
