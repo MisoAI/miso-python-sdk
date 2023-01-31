@@ -7,14 +7,24 @@ The Search API provides personalized, typo-correcting, semantic search for your 
 ## `ApiClient.search.search()`
 Perform a personalized, typo-correcting, semantic search.
 
-### Syntax
+### Example
 ```python
-response = api_client.search.search(payload)
+from miso.sdk import ApiClient
+
+api_client = ApiClient(api_key="{api_key}")
+
+response = api_client.search.search(
+  user_id="bd8f27c",
+  q="doge",
+  fl=["title", "sale_price", "custom_attributes.author"],
+  rows=30,
+)
+products = response["products"]
 ```
 
-### Payload
+### Parameters
 
-`payload` is a dictionary contains all the parameters that will be passed to Miso REST API.
+This method accepts all the parameters accepted by Miso REST API.
 
 Here are some often used parameters:
 
@@ -29,6 +39,7 @@ Here are some often used parameters:
 | `start`        | int       | The offset of records to retrieve. |
 | `rows`         | int       | Number of records to retrieve. |
 
+Please refer to [REST API document](https://api.askmiso.com/#tag/Search-APIs) for complete list.
 
 ### Return Value
 
@@ -41,32 +52,30 @@ A dictionary of returned result with following properties:
 | `total`        | int        | The total number of matched records. |
 
 
-### Example
-```python
-payload = {
-  "user_id": "...",
-  "q": "doge",
-  "fl": ["title", "sale_price", "custom_attributes.author"],
-}
-
-response = api_client.search.search(payload)
-products = response["products"]
-```
-
 ----------------------------------------------------------------------
 
 ## `ApiClient.search.autocomplete()`
 
 Provides real-time, personalized, typo resistant typeahead for your search bar.
 
-### Syntax
+### Example
 ```python
-response = api_client.search.autocomplete(payload)
+from miso.sdk import ApiClient
+
+api_client = ApiClient(api_key="{api_key}")
+
+response = api_client.search.autocomplete(
+  user_id="bd8f27c",
+  q="doge",
+  fl=["title", "sale_price"],
+  completion_fields=["title", "tags", "custom_attributes.author"],
+)
+results = response["completions"]
 ```
 
-### Payload
+### Parameters
 
-`payload` is a dictionary contains all the parameters that will be passed to Miso REST API.
+This method accepts all the parameters accepted by Miso REST API.
 
 Here are some often used parameters:
 
@@ -80,7 +89,7 @@ Here are some often used parameters:
 | `start`             | int       | The offset of records to retrieve. |
 | `rows`              | int       | Number of records to retrieve. |
 
-
+Please refer to [REST API document](https://api.askmiso.com/#tag/Search-APIs) for complete list.
 
 ### Return Value
 
@@ -88,20 +97,7 @@ A dictionary of returned result with following properties:
 
 | Name           | Type            | Description |
 | -------------- | --------------- | ----------- |
-| `completions`  | dict[str, list] | A dictionary with autocompleted field as key, and list of autocomplete result as it's value. |
-
-### Example
-```python
-payload = {
-  "user_id": "...",
-  "q": "doge",
-  "fl": ["title", "sale_price"],
-  "completion_fields": ["title", "tags", "custom_attributes.author"],
-}
-
-response = api_client.search.autocomplete(payload)
-products = response["completions"]
-```
+| `completions`  | dict[str, list] | A dictionary with autocompleted field as key, and list of autocomplete result as value. |
 
 ----------------------------------------------------------------------
 
@@ -109,14 +105,21 @@ products = response["completions"]
 
 provides a simple and fast interface to retrieve products by their product ids.
 
-### Syntax
+### Example
 ```python
-response = api_client.search.multi_get(product_ids)
+from miso.sdk import ApiClient
+
+api_client = ApiClient(api_key="{api_key}")
+
+product_ids=["AH0376", "AH38917", "ZD4738145"]
+
+response = api_client.search.multi_get(product_ids=product_ids)
+products = response["products"]
 ```
 
-### Payload
+### Parameters
 
-`payload` is a dictionary contains all the parameters that will be passed to Miso REST API.
+This method accepts all the parameters accepted by Miso REST API.
 
 Here are some often used parameters:
 
@@ -125,6 +128,8 @@ Here are some often used parameters:
 | `product_ids`       | list[str] | List of product ids to retrive. |
 | `fl`                | list[str] | List of fields to retrieve. `product_id` is always included. When not specified, all fields will be retrieved. |
 
+Please refer to [REST API document](https://api.askmiso.com/#tag/Search-APIs) for complete list.
+
 ### Return Value
 
 A dictionary of returned result with following properties:
@@ -132,22 +137,6 @@ A dictionary of returned result with following properties:
 | Name           | Type            | Description |
 | -------------- | --------------- | ----------- |
 | `products`     | list[dict]      | A list of Product records. Use `fl` parameter to specify what fields are returned. |
-
-### Example
-```python
-payload = {
-  "user_id": "...",
-  "product_ids":[
-    "765881384",
-    "1021528795",
-    "741362619",
-  ]
-  "fl": ["title", "sale_price"],
-}
-
-response = api_client.search.multi_get(payload)
-products = response["products"]
-```
 
 ----------------------------------------------------------------------
 
