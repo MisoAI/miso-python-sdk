@@ -31,44 +31,41 @@ print(json.dumps(resp, indent=2))
 will print something similar to:
 ```json
 {
-  "message": "success",
-  "data": {
-    "took": 15,
-    "miso_id": "fd3aae82-8068-11ed-89d8-967a8675a919",
-    "products": [
-      {
-        "product_id": "588527603"
-      },
-      {
-        "product_id": "193225388"
-      },
-      {
-        "product_id": "771495105"
-      },
-      {
-        "product_id": "572340793",
-      },
-      {
-        "product_id": "563687627"
-      }
-    ],
-    "total": 65577,
-    "start": 0,
-    "spellcheck": {
-      "spelling_errors": false,
-      "auto_spelling_correction": false,
-      "original_query": "love",
-      "original_query_with_markups": "love",
-      "corrected_query": "love",
-      "corrected_query_with_markups": "love"
+  "took": 15,
+  "miso_id": "fd3aae82-8068-11ed-89d8-967a8675a919",
+  "products": [
+    {
+      "product_id": "588527603"
     },
-    "product_existence": {},
-    "partially_matched_products": null,
-    "facet_counts": {
-      "facet_fields": {}
+    {
+      "product_id": "193225388"
     },
-    "custom_assets": []
-  }
+    {
+      "product_id": "771495105"
+    },
+    {
+      "product_id": "572340793",
+    },
+    {
+      "product_id": "563687627"
+    }
+  ],
+  "total": 65577,
+  "start": 0,
+  "spellcheck": {
+    "spelling_errors": false,
+    "auto_spelling_correction": false,
+    "original_query": "love",
+    "original_query_with_markups": "love",
+    "corrected_query": "love",
+    "corrected_query_with_markups": "love"
+  },
+  "product_existence": {},
+  "partially_matched_products": null,
+  "facet_counts": {
+    "facet_fields": {}
+  },
+  "custom_assets": []
 }
 ```
 
