@@ -6,6 +6,9 @@ build: venv/bin/activate
 test: venv/bin/activate
 	. venv/bin/activate; pytest -m local
 
+test-online: venv/bin/activate
+	. venv/bin/activate; pytest
+
 clean:
 	rm -r dist || true
 	rm -r miso_sdk.egg-info || true

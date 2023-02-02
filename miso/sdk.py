@@ -67,3 +67,5 @@ class ApiClient:
         self.qa = QAApi(api_call)
         self.bulk = BulkApi(api_call)
         self.experiment = ExperimentApi(api_call)
+
+        self._api_call = api_call
