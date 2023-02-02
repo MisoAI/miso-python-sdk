@@ -151,6 +151,7 @@ params = [
 param_ids = [f"{param[0].__name__}.{param[1]}" for param in params]
 
 @pytest.mark.parametrize('api, func_name, input, expected', params, ids=param_ids)
+@pytest.mark.local
 def test_parameter_passing(api, func_name, input, expected):
 
     # set default values

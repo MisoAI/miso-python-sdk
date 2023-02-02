@@ -4,7 +4,7 @@ build: venv/bin/activate
 	. venv/bin/activate; python3 setup.py sdist
 
 test: venv/bin/activate
-	. venv/bin/activate; pytest
+	. venv/bin/activate; pytest -m local
 
 clean:
 	rm -r dist || true

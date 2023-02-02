@@ -33,6 +33,7 @@ def null_func():
     (ApiId.USER_READ, {}),
     (ApiId.USER_DELETE, {}),
 ])
+@pytest.mark.local
 def test_validation_pass(api_id, payload):
     api_base = ApiBase(null_func)
     api_base.validate_payload(api_id, payload)
@@ -53,6 +54,7 @@ def test_validation_pass(api_id, payload):
     (ApiId.MGET, {"product_id":["1", "2", "3"]}),
     (ApiId.USER_UPLOAD, {"data":{}}),
 ])
+@pytest.mark.local
 def test_validation_fail(api_id, payload):
     api_base = ApiBase(null_func)
     with pytest.raises(ValueError, match=r".* shoud be .*"):
