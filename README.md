@@ -14,6 +14,25 @@ Enhance your site with high conversion magic with [Miso](https://miso.ai/)'s pow
 [API Reference](https://api.askmiso.com/) |
 [Recipes](https://docs.miso.ai/recipes)
 
+## Installation
+
+The [miso-sdk](https://pypi.org/project/miso-sdk/) is on [PYPI](https://pypi.org/), you can install `miso-sdk` with the package manager of your choice:
+
+With `pip`:
+```shell
+$ pip install miso-sdk
+```
+
+With `poetry`:
+```shell
+$ poetry add miso-sdk
+```
+
+With `pdm`:
+```shell
+$ pdm add miso-sdk
+```
+
 ## Quick Start
 To use the SDK client:
 
